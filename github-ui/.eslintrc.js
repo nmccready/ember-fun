@@ -9,7 +9,8 @@ module.exports = {
     $: true
   },
   env: {
-    browser: true
+    browser: true,
+    commonjs: true
   },
   rules: {
   }

@@ -1,11 +1,10 @@
-import Route from '@ember/routing/route';
+import Ember from 'ember';
 
-export default Route.extend({
-  model(){
-    // get id for the org
-    const orgName = this.modelFor('org').id;
-
-    return $.get(`https://api.github.com/orgs/${orgName}/repos`)
+export default Ember.Route.extend({
+  github: Ember.inject.service(),
+  model() {
+    const org = this.modelFor('org');
+    return this.get('github').repos({ orgId: org.login });
   },
 
   setupController(ctrl) {

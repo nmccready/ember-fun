@@ -1,17 +1,13 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  
-  authentication: Ember.inject.service(),
-  
-  setupController(ctrl) {
-    this._super(...arguments);
-    ctrl.set('records', this.get('authentication.records'));
-  },
-
-  actions: {
-    addToRecords(val) {
-      this.get('authentication.records').addObject({id: val});
-    }
+  github: Ember.inject.service(),
+  model(params) {
+    return this.get('github').org(params.id)
+      .then((data) => {
+        data.oldId = data.id;
+        data.id = data.name;
+        return data;
+      });
   }
 });

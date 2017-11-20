@@ -1,10 +1,8 @@
 {{link-to 'Back to orgs' 'orgs'}}
-<h4>Org</h4>
+{{log model}}
 
-<span {{action 'addToRecords' 'Two'}}> click me!!</span>
-
-{{#each records as |rec|}}
-  <li>{{rec.id}}</li>
-{{/each}}
+<h4>
+  <img src={{model.avatar_url}} height='48'>
+  {{model.name}}</h4>
 
 {{outlet}}

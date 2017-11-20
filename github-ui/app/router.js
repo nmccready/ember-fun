@@ -11,7 +11,7 @@ Router.map(function() {
   this.route('org', { path: 'org/:id' }, function() { // /orgs
     this.route('repos', {}); // /orgs/ember
     // NOTE :tags should be unique all the way down the tree
-    this.route('repo', { path: ':repoid' }, function() {
+    this.route('repo', { path: ':repoId' }, function() {
       this.route('contributors', {});
       this.route('issues', {});
     }); // /org/jquery/jquery-ui

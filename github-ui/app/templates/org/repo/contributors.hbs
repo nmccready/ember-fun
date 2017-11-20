@@ -1,2 +1,15 @@
 {{outlet}}
 <p>Contributors</p>
+
+{{log model}}
+<ul>
+  {{#each model as |item|}}
+
+  <li>
+    <img src={{item.avatar_url}} height='48'>
+    <span style="font-weight: bold;">{{item.login}}:</span>
+    <span>{{item.contributions}}</span>
+  </li>
+
+  {{/each}}
+</ul>
