@@ -32,4 +32,8 @@ export default Ember.Service.extend({
     const part = this.repos({ orgId, repoId, doBuild: true }) + '/contributors';
     return this.request(part);
   },
+  issues({ orgId, repoId }) {
+    const part = this.repos({ orgId, repoId, doBuild: true }) + '/issues';
+    return this.request(part);
+  },
 });

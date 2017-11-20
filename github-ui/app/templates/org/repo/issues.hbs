@@ -1,2 +1,11 @@
 {{outlet}}
 <p>Issues</p>
+
+<ul>
+  {{#each model as |item|}}
+  <li>
+    <span>{{item.title}}</span>
+  </li>
+
+  {{/each}}
+</ul>
