@@ -1,6 +1,10 @@
 {{link-to 'Back to orgs' 'orgs'}}
 <h4>Org</h4>
 
-{{log records}}
+<span {{action 'addToRecords' 'Two'}}> click me!!</span>
+
+{{#each records as |rec|}}
+  <li>{{rec.id}}</li>
+{{/each}}
 
 {{outlet}}
