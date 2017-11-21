@@ -1,8 +1,10 @@
 import { moduleFor, test } from 'ember-qunit';
+import favorites from 'github-ui/services/favorites'
 
 moduleFor('route:orgs', 'Unit | Route | orgs', {
-  // Specify the other units that are required for this test.
-  // needs: ['controller:foo']
+  setup() {
+    this.register('service:favorites', favorites);
+  }
 });
 
 test('it exists', function(assert) {

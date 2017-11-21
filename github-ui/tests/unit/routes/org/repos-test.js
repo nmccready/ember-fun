@@ -1,8 +1,10 @@
 import { moduleFor, test } from 'ember-qunit';
+import github from 'github-ui/services/github'
 
 moduleFor('route:org/repos', 'Unit | Route | org/repos', {
-  // Specify the other units that are required for this test.
-  // needs: ['controller:foo']
+  setup() {
+    this.register('service:github', github);
+  }
 });
 
 test('it exists', function(assert) {
