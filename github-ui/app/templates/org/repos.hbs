@@ -1,6 +1,6 @@
 <ul>
-    {{#each model as |item|}}
-        <li>{{link-to item.name 'org.repo.issues' item.name}}</li>
+    {{#each model as |r|}}
+        <li>{{github-repo repo=r}}</li>
     {{/each}}
     
 </ul>

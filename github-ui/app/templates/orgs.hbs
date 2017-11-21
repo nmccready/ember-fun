@@ -3,10 +3,9 @@
 
 <ul>
     {{#each model as |org|}}
-    <li>
-        <span {{action "favoriteClick" org}}>[ Favorite ]</span>
-        {{link-to org.id 'org' org.id}}
-    </li>
+        <li>
+            {{github-org org=org on-fav-clicked="favoriteClick"}}
+        </li>
     {{/each}}
 </ul>
 
