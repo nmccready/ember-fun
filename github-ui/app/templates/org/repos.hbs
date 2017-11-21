@@ -1,6 +1,10 @@
 <ul>
     {{#each model as |r|}}
-        <li>{{github-repo repo=r}}</li>
+        <li>
+            {{#github-repo repo=r}}
+                <span>yielded!</span>
+            {{/github-repo}}
+        </li>
     {{/each}}
     
 </ul>
