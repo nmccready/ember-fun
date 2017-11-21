@@ -41,6 +41,9 @@ export default Ember.Route.extend({
   actions: {
     favoriteClick(org){
       this.get('favorites').favoriteItem(org);
+    },
+    linkToggled(){
+      console.log('TOGGLED');
     }
   }
 });

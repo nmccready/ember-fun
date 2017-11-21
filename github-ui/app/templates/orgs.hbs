@@ -1,5 +1,6 @@
 <h2>My Fav Orgs</h2>
 
+
 <ul>
     {{#each model as |org|}}
     <li>
@@ -8,5 +9,12 @@
     </li>
     {{/each}}
 </ul>
+
+{{!-- Unable to get data- attributeBindings working --}}
+{{social-info 
+    name="Nick McCready"
+    twitter="nmccready"
+    github="nmccready"
+    on-link-toggle="linkToggled"}}
 
 {{outlet}}
