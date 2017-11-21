@@ -11,7 +11,7 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{github-repo}}`);
 
-  assert.equal(this.$().text().trim(), '');
+  assert.equal(this.$().text().trim(), '( Fork Count: , Watchers Count:  )');
 
   // Template block usage:
   this.render(hbs`
@@ -20,5 +20,8 @@ test('it renders', function(assert) {
     {{/github-repo}}
   `);
 
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(this.$().text().trim(), `( Fork Count: , Watchers Count:  )
+
+
+      template block text`);
 });

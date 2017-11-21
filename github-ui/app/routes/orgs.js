@@ -48,7 +48,7 @@ export default Ember.Route.extend({
       favorites.unfavoriteItem(org);
     },
     linkToggled(){
-      console.log('TOGGLED');
+      Ember.Logger.debug('TOGGLED');
     }
   }
 });

@@ -11,14 +11,6 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{notfound-stranger-things}}`);
 
-  assert.equal(this.$().text().trim(), '');
+  assert.ok(this.$().text().trim().length > 0);
 
-  // Template block usage:
-  this.render(hbs`
-    {{#notfound-stranger-things}}
-      template block text
-    {{/notfound-stranger-things}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
 });

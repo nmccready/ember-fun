@@ -1,12 +1,11 @@
-import Service from '@ember/service';
+import Ember from 'ember';
 
-export default Service.extend({
+export default Ember.Service.extend({
   
   items: [],
 
   log(){
-    // eslint-disable-next-line no-console
-    console.log(this.get('items').map(x => x.id).join(', '));
+    Ember.Logger.debug(this.get('items').map(x => x.id).join(', '));
   },
 
   favoriteItem(item) {
