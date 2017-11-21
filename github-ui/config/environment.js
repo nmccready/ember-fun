@@ -34,6 +34,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'test') {
+    Object.assign(ENV.APP, require('./local') || {});
     // Testem prefers this...
     ENV.locationType = 'none';
 
