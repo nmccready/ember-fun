@@ -4,7 +4,8 @@ export default Ember.Route.extend({
   github: Ember.inject.service(),
   model() {
     const org = this.modelFor('org');
-    return this.get('github').repos({ orgId: org.login });
+    return this.get('github').repos({ orgId: org.login })
+    //.then(() => { throw new Error('crap')});
   },
 
   setupController(ctrl) {

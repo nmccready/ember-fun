@@ -19,6 +19,24 @@ export default Ember.Route.extend({
       id: "facebook"
     }];
   },
+  // model() {
+  //   return new Promise((resolve, reject) =>
+  //     Ember.run.later(() =>
+  //       resolve([{
+  //         id: "emberjs"
+  //       }, {
+  //         id: "ember-cli"
+  //       }, {
+  //         id: "microsoft"
+  //       }, {
+  //         id: "yahoo"
+  //       }, {
+  //         id: "netflix"
+  //       }, {
+  //         id: "facebook"
+  //       }])
+  //       , 1));
+  // },
 
   actions: {
     favoriteClick(org){
