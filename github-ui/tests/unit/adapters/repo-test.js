@@ -1,8 +1,10 @@
 import { moduleFor, test } from 'ember-qunit';
+import github from 'github-ui/tests/mocks/services/github'
 
 moduleFor('adapter:repo', 'Unit | Adapter | repo', {
-  // Specify the other units that are required for this test.
-  // needs: ['serializer:foo']
+  setup() {
+    this.register('service:github', github);
+  }
 });
 
 // Replace this with your real tests.

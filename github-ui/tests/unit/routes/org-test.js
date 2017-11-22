@@ -1,8 +1,7 @@
 import { moduleFor, test } from 'ember-qunit';
-import github from 'github-ui/services/github'
+import github from 'github-ui/tests/mocks/services/github'
 
 moduleFor('route:org', 'Unit | Route | org', {
-  // Specify the other units that are required for this test.
   setup() {
     this.register('service:github', github);
   }

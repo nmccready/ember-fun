@@ -1,5 +1,5 @@
 import { moduleFor, test } from 'ember-qunit';
-import github from 'github-ui/services/github'
+import github from 'github-ui/tests/mocks/services/github'
 
 moduleFor('route:org/repo/contributors', 'Unit | Route | org/repo/contributors', {
   setup() {

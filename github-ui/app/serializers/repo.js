@@ -21,7 +21,7 @@ export default DS.RESTSerializer.extend({
         payload.id = payload.login || payload.name;
         break;
       default:
-        debugger;
+        break;
     }
 
     return this._super(store, modelClass,
