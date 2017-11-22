@@ -3,8 +3,11 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   github: Ember.inject.service(),
   model() {
-    const org = this.modelFor('org');
-    return this.get('github').repos({ orgId: org.login })
+    const orgId = this.modelFor('org').login;
+    // return this.get('github').repos({ orgId })
+    return this.store.query('repo', {
+      orgId
+    });
     //.then(() => { throw new Error('crap')});
   },
 

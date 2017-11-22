@@ -1,15 +1,19 @@
 import Ember from 'ember';
 
 export default Ember.Service.extend({
+  host: null,
+  token: null,
+
   init() {
     this._super(...arguments);
     this.set('token', Ember.getOwner(this).application.API_TOKENS.GITHUB);
-    this.set('baseUrl', 'https://api.github.com/');
+    this.set('host', 'https://api.github.com/');
+  },
+  buildUrl(part) {
+    return this.get('host') + part.toLowerCase() + `?access_token=${this.get('token')}`
   },
   request(part) {
-    const baseUrl = this.get('baseUrl');
-    const url = baseUrl + part.toLowerCase() + `?access_token=${this.get('token')}`
-    return $.get(url);
+    return $.get(this.buildUrl(part));
   },
   org(val) {
     return this.request('orgs/' + val);
